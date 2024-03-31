@@ -1,98 +1,42 @@
 <!DOCTYPE html>
-<html lang=”en”>
+<html lang="es">
 <head>
-<meta charset=”UTF-8″>
-<meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
-<title>Quieres ir al cine conmigo?</title>
-<style>
-body {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-margin: 0;
-flex-direction: column;
-}
-
-#buttonContainer {
-position: relative;
-text-align: center;
-}
-
-#title {
-font-size: 24px;
-margin-bottom: 20px;
-}
-
-.button {
-padding: 10px 20px;
-font-size: 16px;
-border-radius: 5px;
-cursor: pointer;
-transition: font-size 0.3s ease;
-}
-
-.green {
-background-color: #4CAF50;
-color: white;
-border: none;
-}
-
-.red {
-background-color: #f44336;
-color: white;
-border: none;
-}
-
-.green:hover {
-transform: scale(1.1);
-}
-
-.red:active {
-animation: grow 1s infinite alternate;
-}
-
-@keyframes grow {
-to {
-font-size: 1000px;
-}
-}
-
-#gif {
-position: absolute;
-top: -150px;
-left: 50%;
-transform: translateX(-50%);
-z-index: -1;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora, sal conmigo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #yes-button {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Aurora, ¿eres muy guapa?</h1>
+    <p>¿Quieres salir conmigo al cine?</p>
+    <img src="path/to/your/gif.gif" alt="GIF">
+    <br>
+    <button id="yes-button" onclick="showGif()">Sí</button>
+    <button onclick="increaseNoButton()">No</button>
 
-<div id=”title”>Aurora eres muy guapa, me gustas desde año nuevo, quieres ir al cine conmigo?</div>
+    <script>
+        let noButtonClicks = 0;
 
-<div id=”buttonContainer”>
-<img id=”gif” src=”https://media.giphy.com/media/TgZJIdfAkv9Xe/giphy.gif” alt=”Corazón latiendo”>
-<button id=”yesButton” class=”button green”>Si</button>
-<button id=”noButton” class=”button red”>No</button>
-</div>
+        function increaseNoButton() {
+            noButtonClicks++;
+            const noButton = document.querySelector("button");
+            noButton.style.fontSize = `${16 + noButtonClicks}px`;
+        }
 
-<script>
-document.getElementById(“yesButton”).addEventListener(“click”, function() {
-alert(“Te amo”);
-});
-
-document.getElementById(“noButton”).addEventListener(“click”, function() {
-var currentSize = parseInt(window.getComputedStyle(document.getElementById(“yesButton”)).fontSize);
-var newSize = currentSize + 30;
-if (newSize <= 1000) {
-document.getElementById(“yesButton”).style.fontSize = newSize + “px”;
-var popup = window.open(“”, “_blank”, “width=200, height=200”);
-popup.document.write(“<img src=’https://media.giphy.com/media/TgZJIdfAkv9Xe/giphy.gif’ alt=’corazon latiendo’>”);
-popup.document.write(“<h1>Te amo</h1>”);
-}
-});
-</script>
-
+        function showGif() {
+            //https://github.com/juanpablomelendez/Auroraseminovia/blob/5dd3024262d456ca04fa5bef50519b099a78f747/iloveyousomuch-iloveu.gif
+            const gifSrc = "https://github.com/juanpablomelendez/Auroraseminovia/blob/5dd3024262d456ca04fa5bef50519b099a78f747/good-morning.gif";
+            const img = document.querySelector("img");
+            img.src = gifSrc;
+        }
+    </script>
 </body>
 </html>
