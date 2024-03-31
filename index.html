@@ -9,10 +9,17 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+        #yes-button, #no-button {
+            margin: 20px; /* Add space between the buttons */
+            position: relative; /* Add a relative position */
+            z-index: 2; /* Bring the buttons to the front */
+        }
         #yes-button {
             transition: transform 0.2s; /* Add a smooth transition effect */
-            position: relative; /* Add a relative position */
-            z-index: 1; /* Bring the button to the front */
+        }
+        img {
+            position: relative;
+            z-index: 1; /* Put the gif behind the buttons */
         }
     </style>
 </head>
@@ -32,7 +39,7 @@
         }
         function enlargeYes() {
             const yesButton = document.getElementById("yes-button");
-            yesButton.style.transform = "scale(1.1)";
+            yesButton.style.transform = "scale(2)"; /* Increase the size of the 'yes' button */
         }
     </script>
 </body>
