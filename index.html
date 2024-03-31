@@ -9,22 +9,8 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
-        #yes-button, #no-button {
-            font-size: 20px; /* Increase font size */
-            padding: 10px 20px; /* Add some padding */
-            margin: 0 10px; /* Add some margin */
-        }
         #yes-button {
-            background-color: green; /* Green background */
-            color: white; /* White text */
             transition: transform 0.2s; /* Add a smooth transition effect */
-        }
-        #no-button {
-            background-color: red; /* Red background */
-            color: white; /* White text */
-        }
-        #no-button:hover + #yes-button {
-            transform: scale(1.1); /* Make the "Sí" button bigger on hover over "No" button */
         }
     </style>
 </head>
@@ -34,13 +20,17 @@
     <img src="https://github.com/juanpablomelendez/abreme/blob/main/ryan-gosling.gif?raw=true" alt="GIF">
     <br>
     <button id="yes-button" onclick="showGif()">Sí</button>
-    <button id="no-button">No</button>
+    <button id="no-button" onclick="enlargeYes()">No</button>
 
     <script>
         function showGif() {
-            const gifSrc = "https://github.com/juanpablomelendez/abreme/blob/main/good-morning.gif?raw=true";
+            const gifSrc = "https://github.com/juanpablomelendez/abreme/blob/main/tumblr_0916c3f469b1dc4985ea9d541bccc72c_1a6dd9bd_540.gif?raw=true";
             const img = document.querySelector("img");
             img.src = gifSrc;
+        }
+        function enlargeYes() {
+            const yesButton = document.getElementById("yes-button");
+            yesButton.style.transform = "scale(1.1)";
         }
     </script>
 </body>
