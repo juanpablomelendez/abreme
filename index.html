@@ -32,6 +32,7 @@
     <button id="no-button" onclick="enlargeYes()">No</button>
 
     <script>
+        let scale = 1;
         function showGif() {
             const gifSrc = "https://github.com/juanpablomelendez/abreme/blob/main/tumblr_0916c3f469b1dc4985ea9d541bccc72c_1a6dd9bd_540.gif?raw=true";
             const img = document.querySelector("img");
@@ -39,7 +40,8 @@
         }
         function enlargeYes() {
             const yesButton = document.getElementById("yes-button");
-            yesButton.style.transform = "scale(2)"; /* Increase the size of the 'yes' button */
+            scale += 0.1; /* Increase the scale by 0.1 each time */
+            yesButton.style.transform = "scale(" + scale + ")"; /* Apply the new scale to the 'yes' button */
         }
     </script>
 </body>
