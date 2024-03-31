@@ -17,10 +17,14 @@
         #yes-button {
             background-color: green; /* Green background */
             color: white; /* White text */
+            transition: transform 0.2s; /* Add a smooth transition effect */
         }
         #no-button {
             background-color: red; /* Red background */
             color: white; /* White text */
+        }
+        #no-button:hover + #yes-button {
+            transform: scale(1.1); /* Make the "Sí" button bigger on hover over "No" button */
         }
     </style>
 </head>
