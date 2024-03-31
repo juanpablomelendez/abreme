@@ -27,20 +27,12 @@
 <body>
     <h1>Aurora eres muy guapa</h1>
     <p>¿Quieres salir conmigo al cine?</p>
-    <img src="https://github.com/juanpablomelendez/abreme/blob/main/83dc80fbe98c340427ed12f56f5b65e9.gif?raw=true" alt="GIF">
+    <img src="https://github.com/juanpablomelendez/abreme/blob/main/ryan-gosling.gif?raw=true" alt="GIF">
     <br>
     <button id="yes-button" onclick="showGif()">Sí</button>
-    <button id="no-button" onclick="increaseNoButton()">No</button>
+    <button id="no-button">No</button>
 
     <script>
-        let noButtonClicks = 0;
-
-        function increaseNoButton() {
-            noButtonClicks++;
-            const noButton = document.querySelector("#no-button");
-            noButton.style.fontSize = `${16 + noButtonClicks}px`;
-        }
-
         function showGif() {
             const gifSrc = "https://github.com/juanpablomelendez/abreme/blob/main/good-morning.gif?raw=true";
             const img = document.querySelector("img");
